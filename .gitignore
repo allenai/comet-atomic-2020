@@ -1,0 +1,16 @@
+.DS_store
+data/TransOMCS/train.tsv
+data/transomcs_train.tsv
+wandb/run-*
+mosaic/__pycache__/
+mosaic/datasets/__pycache__/
+mosaic/infra/__pycache__/
+raw_data/ConceptNet/
+data/
+old_data/
+*.tsv
+raw_data/
+wandb/
+scripts/lens_source.txt
+scripts/lens_target.txt
+.idea/

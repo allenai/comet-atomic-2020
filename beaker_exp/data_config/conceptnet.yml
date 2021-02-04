@@ -1,0 +1,25 @@
+description: T5 COMET 2020 Pipeline - ConceptNet System Eval
+tasks:
+  - name: t5-comet-conceptnet
+    cluster: ai2/on-prem-ai2-server1
+    spec:
+      env:
+        TRAIN_BATCH_SIZE: 6  # input batch size for training (default: 64)
+        VALID_BATCH_SIZE: 16   # input batch size for testing (default: 1000)
+        TRAIN_EPOCHS: 1        # number of epochs to train (default: 10)
+        VAL_EPOCHS: 1 
+        LEARNING_RATE: 0.01   # learning rate (default: 0.01)
+        SEED: 42               # random seed (default: 42)
+        TRAIN_DATA_PATH: "/data/conceptnet_train.tsv"
+        DEV_DATA_PATH: "/data/conceptnet_dev.tsv"
+        TEST_DATA_PATH: "/data/conceptnet_test.tsv"
+      image: {{ .Env.IMAGE }}
+      resultPath: /models
+      requirements:
+        gpuCount: 1
+      datasetMounts:
+        - datasetId: t5-dataset 
+          containerPath: /data
+      args:
+        - python
+        - comet_t5.py
