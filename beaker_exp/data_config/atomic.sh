@@ -1,1 +1,0 @@
-IMAGE="mosaic-kgs-$(git rev-parse --short HEAD)" beaker experiment create -f atomic.yml

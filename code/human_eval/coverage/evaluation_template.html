@@ -1,0 +1,785 @@
+
+            <html lang="en">
+
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+                    <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+
+                    <!-- BOOTSTRAP CSS -->
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+
+                    <!-- HITPUB CSS -->
+                    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+                    <style id="hitpub_css">
+                        /***********************************************
+                        MOSAIC BOOSTRAP OVERWRITES
+                        ***********************************************/
+                        #hitinfo .card {
+                            border-radius: 0;
+                        }
+                         #hitinfo button.btn-link {
+                            color: #fff;
+                            text-decoration: none;
+                         }
+                        
+                        
+                        #hitinfo button.btn-link:hover {
+                            text-decoration: none;
+                        }
+                        #hit ul.question-choice {
+                            list-style-type: none;
+                        }
+                        
+                        /***********************************************
+                        MOSAIC GENERAL STYLING
+                        ***********************************************/
+                        body {
+                            font-family: "Open Sans", "Roboto", sans-serif;
+                            line-height: 1.25;
+                        }
+                        textarea#feedback {
+                            width: 100%
+                        }
+                        input#submitButton {
+                            margin: auto;
+                            display: block;
+                            background-color: #2172a4;
+                            color: #fff;
+                            font-size: 1.125rem;
+                            padding: .5rem 1rem;
+                            cursor: pointer;
+                            border-radius: 1rem;
+                        }
+                        input#submitButton:hover {
+                            background-color: #06486F;
+                        }
+                        
+                        input[type="radio"] {
+                            cursor: pointer;
+                        }
+                        
+                        div.goal-category {
+                            border-bottom: solid 1px #ccc;
+                            padding: 1rem 1rem;
+                        }
+                        
+                        li {
+                            margin:0.6em;
+                        }
+                        
+                        table {
+                            width: 80%;
+                            margin: 5px;
+                        }
+                        
+                        tr {
+                            border:1px solid #ccc;
+                        }
+                        
+                        th {
+                            width:20%;
+                            background-color:#fff;
+                            font-weight:normal;
+                            text-align: center;
+                            padding:0.5em;
+                        }
+                        
+                        
+                        td {
+                            padding-left:20px;
+                            padding-right:10px;
+                        }
+                        
+                        
+                        
+                        
+                        /***********************************************
+                        HIT CUSTOM GENERAL STYLING
+                        ***********************************************/
+                        div.card-header {
+                            background-color: #06486F;
+                        }
+                        div.card-header h5 {
+                            color: #fff !important;
+                        }
+                        
+                        
+                        .question-choice-container label.btn {
+                            background-color: #eee;
+                            border: #ccc 1px solid;
+                            margin-left: 0 !important;
+                            color: black;
+                        }
+                        
+                        
+                        .legend {
+                            margin-top: .33rem;
+                            font-weight: normal;
+                            padding-left: 40px;
+                        }
+                        .legend .label{
+                            font-style: italic;
+                        }
+                        
+                        .emphasize {
+                            font-weight: bold;
+                            color: black;
+                            font-style: italic;
+                        }
+                        
+                        .btn-group-container {
+                            align:left;
+                            padding:0;
+                        }
+                        
+                        .example {
+                            pointer-events:none;
+                        }
+                        
+                        .title {
+                            font-style: italic;
+                        }
+                        
+                        .entity {
+                            color: blue;
+                            font-weight: bold;
+                        }
+                        
+                        .use {
+                            color: purple;
+                            font-weight: bold;
+                        }
+                        
+                        .btn-group-xs > .btn, .btn-xs {
+                          padding: .4rem .4rem;
+                          font-size: .8rem;
+                          line-height: 1.2;
+                          border-radius: .2rem;
+                        }
+                        
+                        .card-body {
+                            background-color:#fbfbfb;
+                        }
+                        
+                        .concept_a {
+                          color: #0072B2;
+                          font-weight: bold;
+                          font-style: italic;
+                        }
+                        
+                        .concept_b {
+                          color: #D55E00;
+                          font-weight: bold;
+                          font-style: italic;
+                        }
+                        
+                        .sm-bold {
+                            font-weight:bold;
+                            font-style: italic;
+                            font-size: 80%;
+                        }
+                        
+                        
+                        
+                        label[for="2"]:hover, label[for="2"].active {
+                            background-color:  #02523C !important;
+                            color: white;
+                        }
+                        label[for="1"]:hover, label[for="1"].active {
+                            background-color: #047D5C !important;
+                            color: white;
+                        }
+                        
+                        label[for="0"]:hover, label[for="0"].active {
+                            background-color: #999 !important;
+                            color: white;
+                        }
+                        label[for="-1"]:hover, label[for="-1"].active {
+                            background-color: #7F0404 !important;
+                            color: white;
+                        }
+                        
+                        label[for="-2"]:hover, label[for="-2"].active {
+                            background-color: #222 !important;
+                            color: white;
+                        }
+                        
+                        label[for="-9"]:hover, label[for="-9"].active {
+                            background-color: #555 !important;
+                            color: white;
+                        }
+                        
+
+                    </style>
+
+                    <!-- HIT START -->
+                   <div id="hit" class="container">
+
+                        <!-- ACCORDION START -->
+                        <div class="col-12 accordion" id="hitinfo">
+                            
+                            <!-- INSTRUCTIONS START -->
+                            <div class="card">
+                                <div class="card-header id="instructionsHeading">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#instructions" aria-expanded="true" aria-controls="instructions">
+                                            Instructions (click to expand/collapse)
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div class="collapse show" id="instructions" aria-labelledby="instructionsHeading" data-parent="#hitinfo">
+                                    <div class="card-body">
+                                        <div class="card-content">
+                                            <p>(WARNING: This HIT may contain adult content. Worker discretion is advised.)</p>
+
+                                            <p>Thanks for participating in this HIT!</p>
+
+                                            <p class="mb-2"><b>You will evaluate how often assertions are true. Each assertion is comprised of 3 parts: <em><span class="concept_a">Phrase A</span>, Relation, <span class="concept_b">Phrase B</span></em></b></p>
+                                            <div class="col-11 mb-4">
+                                                <div class="row">
+                                                    <div class="col-3"><span class="concept_a">Phrase A</span>, <span class="concept_b">Phrase B</span></em></div>
+                                                    <div class="col-9">Short phrases. May describe objects, object properties, events, actions, etc.</div>
+                                                </div>
+                                                <div class="row mt-1">
+                                                    <div class="col-3"><em>Relation</em></div>
+                                                    <div class="col-9">How <em>A</em> relates to <em>B</em>.</div>
+                                                </div>
+                                            </div>
+                                            <p class="mb-2"><b>For each assertion, determine how true it is:</b></p>
+                                            <div class="legend">
+                                                <div class="row"><span class="label col-3">always/often</span><span class="col-9">Always or quite often true.</span></div>
+                                                <div class="row"><span class="label col-3">sometimes/likely</span><span class="col-9">Sometimes is true or true for some people. -or- Likely true. </span></div>
+                                                <div class="row"><span class="label col-3">farfetched/never</span><span class="col-9">False or farfetched, at best. -or- Unlikely to be true. </span></div>
+                                                <div class="row"><span class="label col-3">invalid</span><span class="col-9">This assertion makes no sense (i.e., "what does this even mean?!").</span></div>
+                                                <div class="row"><span class="label col-3">too unfamiliar to judge</span><span class="col-9">Cannot make a fair evaluation. Unfamiliar with one or both of the phrase.</spam></div>
+                                            </div>
+                                            <br><br>
+
+                                            <p class="mb-2"><b>Potentially tricky Relations:</b> Note, there are many other relations, but these are potentially the trickiest.</p>
+                                            <ul>
+                                            <li><strong>Made (up) of</strong> can mean: </li>
+                                                <ul>
+                                                <li>B is a part of A (e.g. <span class="concept_a">Car</span>, <u>Made (up) of</u>, <span class="concept_b">engine</span>
+                                                - <span class="badge" style="background-color:#02523C; color:white;">always/often</span> <small><em>true that there's an engine in the car</em></small>),</li>
+                                                <li>B is a material of/for A (e.g.,  <span class="concept_a">Cake</span>, <u>Made (up) of</u>, <span class="concept_b">flour and eggs</span>
+                                                - <span class="badge" style="background-color:#02523C; color:white;">always/often</span> <small><em>true that cake is made of flour and eggs </em></small>),</li>
+                                                <li>B is a member of A (e.g., <span class="concept_a">Choir</span>, <u>Made (up) of</u>, <span class="concept_b">soprano</span>
+                                                - <span class="badge" style="background-color:#02523C; color:white;">always/often</span> <small><em>choir generally never lacks a soprano voice</em></small>).
+                                                </ul>
+                                            <li><strong>Includes the action/event</strong>:
+                                            means B is <em>one</em> of the many things you can possibly do in the general event described by A. </li>
+                                                <ul>
+                                                <li><span class="concept_a">Travelling to another country</span>, <u>includes the action/event</u>, <span class="concept_b">boarding a plane</span>
+                                                <br>- <span class="badge" style="background-color:#047D5C; color:white;">sometimes/likely</span> <small><em>sometimes you board an airplane when travelling to another country</em></small></li>
+                                                <li><span class="concept_a">Buying groceries</span>, <u>includes the action/event</u>, <span class="concept_b">driving to a store</span>
+                                                <br>- <span class="badge" style="background-color:#047D5C; color:white;">sometimes/likely</span> <small><em>sometimes you drive to a store when you are out to buy groceries</em></small></li>
+                                                <li>Also see example 6.</li>
+                                                </ul>
+                                            <li><strong>Causes or leads to</strong>:
+                                            means in A is an event or situation that causes or is responsible for causing B. </li>
+                                                <ul>
+                                                <li><span class="concept_a">Climbing a mountain</span>, <u>causes or leads to</u>, <span class="concept_b">feeling of triumph</span>
+                                                <br>- <span class="badge" style="background-color:#047D5C; color:white;">sometimes/likely</span> <small><em>triumph is one of the feelings generally associated with energetic goal-oriented activities</em></small></li>
+                                                <li><span class="concept_a">Eating crackers</span>, <u>causes or leads to</u>, <span class="concept_b">less hunger</span>
+                                                <br>- <span class="badge" style="background-color:#047D5C; color:white;">sometimes/likely</span> <small><em>it is likely that eating crackers will lead to lessened hunger</em></small></li>
+                                                <li>Also see example 5.</li>
+                                                </ul>
+                                            <li><strong>Capable of</strong>:
+                                            means in A is capable or able to do B, but the capability doesn't have exclusive to A. </li>
+                                                <ul>
+                                                <li><span class="concept_a">Surgeons</span>, <u>capable of</u>, <span class="concept_b">operating on people</span>
+                                                <br>- <span class="badge" style="background-color:#02523C; color:white;">always/often</span> <small><em>that's what surgeons are trained to do</em></small></li>
+                                                <li><span class="concept_a">Teachers</span>, <u>capable of</u>, <span class="concept_b">sleeping</span>
+                                                <br>- <span class="badge" style="background-color:#02523C; color:white;">always/often</span> <small><em>most living creatures are able to sleep, including humans</em></small></li>
+                                                <li><span class="concept_a">People</span>, <u>capable of</u>, <span class="concept_b">heroic feat</span>
+                                                <br>- <span class="badge" style="background-color:#047D5C; color:white;">sometimes/likely</span> <small><em>some people are capable of heroic feat</em></small></li>
+                                                <li>Also see example 5.</li>
+                                                </ul>
+                                            <li><strong>but before, PersonX needed</strong>:
+                                            means in order for A to happen the doer of the action (PersonX) must have also done B. B is a prerequisite to accomplishing A. </li>
+                                                <ul>
+                                                <li><span class="concept_a">PersonX pursues PersonX's interest</span>, <u>but before, PersonX needed</u>, <span class="concept_b">take a strong interest in something</span>
+                                                <br>- <span class="badge" style="background-color:#02523C; color:white;">always/often</span> <small><em>If you are going to pursue an interest, you better first have an interest!</em></small></li>
+                                                <li><span class="concept_a">PersonX feels proud of himself</span>, <u>but before, PersonX needed</u>, <span class="concept_b">cook an excellent meal</span>
+                                                <br>- <span class="badge" style="background-color:#047D5C; color:white;">sometimes/likely</span> <small><em>it is likely that cooking an excellent meal will help accomplish the feeling of pride</em></small></li>
+                                                <li><span class="concept_a">PersonX daydream</span>, <u>but before, PersonX needed</u>, <span class="concept_b">nothing in particular</span> <span class="badge badge-warning">nothing in particular example</span>
+                                                <br>- <span class="badge" style="background-color:#047D5C; color:white;">sometimes/likely</span> <small><em>there aren't too many prerequisites to daydreaming. One might have been previously bored or wistful, but not doing anything in particular could also lead to daydreaming.</em></small></li>
+                                                <li><span class="concept_a">PersonX win a gold medal</span>, <u>but before, PersonX needed</u>, <span class="concept_b">nothing in particular</span> <span class="badge badge-warning">nothing in particular example</span>
+                                                <br>- <span class="badge" style="background-color:darkred; color:white;">farfetched/never</span> <small><em>You don't win gold medals for doing nothing. X must have done something worthy to have received a medal.</em></small></li>
+                                                </ul>
+                                            </ul>
+
+                                            </ul>
+                                            <br>
+                                            <p>A couple NOTES:</p>
+                                            <ul>
+                                            <li>Please be <strong>forgiving</strong> of <em>spelling or grammatical errors</em></li>
+                                            <li>If the terms are too obscure or you don't know the truth of the fact at the top of your head, it is okay to mark is "too unfamiliar to judge".
+                                            If you can answer (e.g., based on likelihood), please provide a response.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- INSTRUCTIONS END -->
+                            <!-- EXAMPLES START -->
+                            <div class="card">
+                                <div class="card-header id="examplesHeading">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#examples" aria-expanded="true" aria-controls="examples">
+                                            Examples (click to expand)
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div class="collapse" id="examples" aria-labelledby="examplesHeading" data-parent="#hitinfo">
+                                    <div class="card-body">
+                                        <div class="card-content col-12">
+                                            <!-- EXAMPLE MACRO START -->
+
+                                            <!-- EXAMPLE MACRO END -->
+
+                                            <div id="ex0" class="question mt-4">
+                                                <div class="question-header question-choice-container row" style="border-top:3px double #ccc;border-bottom:3px double #ccc;">
+                                                    <div class="col-1  text-right" style="vertical-align: bottom;font-weight:bold;">Q#</div>
+                                                    <div class="col-4" style="vertical-align: bottom; font-weight:bold;">Assertion</div>
+                                                    <div class="col-3 pl-5" style="vertical-align: bottom;font-weight:bold;">How often is this true?</div>
+                                                    <div class="col-4 " style="vertical-align: bottom;font-weight:bold;">Reason</div>
+                                                </div>
+                                            </div>
+
+                                            <div id="ex1" class="question mt-4">
+                                                <div class="question-header question-choice-container row">
+                                                    <div class="question-num col-1 text-right">1)</div>
+                                                    <div class="phrase col-5 pl-2"><span class="concept_a">fork</span>, located at/in/on,  <span class="concept_b">kitchen</span></div>
+                                                    <div class="ex-response btn-group-container col-2">
+                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                            <label class="btn btn-secondary btn-sm active" for="2">
+                                                                <input type="radio" name="example1_valid" autocomplete="off" value="2" disabled>often/always
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reason col-4">
+                                                        Forks are often found in a kitchen.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="ex2" class="question mt-4">
+                                                <div class="question-header question-choice-container row">
+                                                    <div class="question-num col-1 text-right">2)</div>
+                                                    <div class="phrase col-5 pl-2"><span class="concept_a">forest</span>, made (up) of, <span class="concept_b">trees</span></div>
+                                                    <div class="ex-response btn-group-container col-2">
+                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                            <label class="btn btn-secondary btn-sm active" for="2">
+                                                                <input type="radio" name="example1_valid" autocomplete="off" value="2" disabled>often/always
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reason col-4">
+                                                        A forest, by definition, is a large area covered chiefly with trees.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="ex3" class="question mt-4">
+                                                <div class="question-header question-choice-container row">
+                                                    <div class="question-num col-1 text-right">3)</div>
+                                                    <div class="phrase col-5 pl-2"><span class="concept_a">lizard</span>,  found at location,  <span class="concept_b">leaves</span></div>
+                                                    <div class="ex-response btn-group-container col-2">
+                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                            <label class="btn btn-secondary btn-sm active" for="1">
+                                                                <input type="radio" name="example1_valid" autocomplete="off" value="1" disabled>sometimes/likely
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reason col-4">
+                                                        Lizards can be found in/on leaves, but they aren't always on them.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="ex4" class="question mt-4">
+                                                <div class="question-header question-choice-container row">
+                                                    <div class="question-num col-1 text-right">4)</div>
+                                                    <div class="phrase col-5  pl-2"><span class="concept_a">father</span>,  is characterized as (having/being),  <span class="concept_b">gentle</span></div>
+                                                    <div class="ex-response btn-group-container col-2">
+                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                            <label class="btn btn-secondary btn-sm active" for="1">
+                                                                <input type="radio" name="example1_valid" autocomplete="off" value="1" disabled>sometimes/likely
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reason col-4">
+                                                        Some fathers are kind, it is true. It's not a universal truth, however.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="ex5" class="question mt-4">
+                                                <div class="question-header question-choice-container row">
+                                                    <div class="question-num col-1 text-right">5)</div>
+                                                    <div class="phrase col-5  pl-2"><span class="concept_a">spending money</span>, causes or leads to,  <span class="concept_b">satisfaction</span></div>
+                                                    <div class="ex-response btn-group-container col-2">
+                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                            <label class="btn btn-secondary btn-sm active" for="1">
+                                                                <input type="radio" name="example1_valid" autocomplete="off" value="1" disabled>sometimes/likely
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reason col-4">
+                                                        This may be true sometimes or for some people.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="ex6" class="question mt-4">
+                                                <div class="question-header question-choice-container row">
+                                                    <div class="question-num col-1 text-right">6)</div>
+                                                    <div class="phrase col-5  pl-2"><span class="concept_a">going on vacation</span>, includes the action/event,  <span class="concept_b">discover new places</span></div>
+                                                    <div class="ex-response btn-group-container col-2">
+                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                            <label class="btn btn-secondary btn-sm active" for="1">
+                                                                <input type="radio" name="example1_valid" autocomplete="off" value="1" disabled>sometimes/likely
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reason col-4">
+                                                        Discovering a new place may be something you do when you are on a vacation.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="ex7" class="question mt-4">
+                                                <div class="question-header question-choice-container row">
+                                                    <div class="question-num col-1 text-right">7)</div>
+                                                    <div class="phrase col-5 pl-2"><span class="concept_a">PersonX makes a phone call</span>,  Before, PersonX needed,  <span class="concept_b">a phone booth</span></div>
+                                                    <div class="ex-response btn-group-container col-2">
+                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                            <label class="btn btn-secondary btn-sm active" for="1">
+                                                                <input type="radio" name="example1_valid" autocomplete="off" value="1" disabled>sometimes/likely
+                                                            </label>
+                                                        </div>
+                                                        <br><small> ✅ This fact is true but outdated.</small>
+                                                    </div>
+                                                    <div class="reason col-4">
+                                                        This used to be a true fact, though now outdated in most places. However, some cities may still have payphones, so "sometimes" is the best choice here.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="ex8" class="question mt-4">
+                                                <div class="question-header question-choice-container row">
+                                                    <div class="question-num col-1 text-right">8)</div>
+                                                    <div class="phrase col-5  pl-2"><span class="concept_a">airplane</span>,  used for,  <span class="concept_b">crashing into mountains</span></div>
+                                                    <div class="ex-response btn-group-container col-2">
+                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                            <label class="btn btn-secondary btn-sm active" for="-1">
+                                                                <input type="radio" name="example1_valid" autocomplete="off" value="-1" disabled>farfetched/never
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reason col-4">
+                                                        Planes are generally not used for crashing.
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="ex9" class="question mt-4">
+                                                <div class="question-header question-choice-container row">
+                                                    <div class="question-num col-1 text-right">9)</div>
+                                                    <div class="phrase col-5  pl-2"><span class="concept_a">water</span>,  capable of,  <span class="concept_b">feel wet</span></div>
+                                                    <div class="ex-response btn-group-container col-2">
+                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                            <label class="btn btn-secondary btn-sm active" for="-1">
+                                                                <input type="radio" name="example1_valid" autocomplete="off" value="-1" disabled>farfetched/never
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reason col-4">
+                                                      Water may be characterized as feeling wet, but it is not capable of feeling wet.
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="ex10" class="question mt-4">
+                                                <div class="question-header question-choice-container row">
+                                                    <div class="question-num col-1 text-right">10)</div>
+                                                    <div class="phrase col-5  pl-2"><span class="concept_a">book</span>,  used for,  <span class="concept_b">looking at forwards</span></div>
+                                                    <div class="ex-response btn-group-container col-2">
+                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                            <label class="btn btn-secondary btn-sm active" for="-2">
+                                                                <input type="radio" name="example1_valid" autocomplete="off" value="-2" disabled>Invalid
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reason col-4">
+                                                      This assertion does not make sense.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="ex11" class="question mt-4">
+                                                <div class="question-header question-choice-container row">
+                                                    <div class="question-num col-1 text-right">11)</div>
+                                                    <div class="phrase col-5  pl-2"> <span class="concept_a">something</span>,  located at/in/on,  <span class="concept_b">kitchen</span></div>
+                                                    <div class="ex-response btn-group-container col-2">
+                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                            <label class="btn btn-secondary btn-sm active" for="2">
+                                                                <input type="radio" name="example1_valid" autocomplete="off" value="2" disabled>often/always
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reason col-4">
+                                                      Phrase A is a bit <b>vague</b>. If able, please treat these vague specifications as though one would treat any other more specific phrases.<br>
+                                                      Since it's always the case that there is something always found in a kitchen, this is considered always true.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--
+                                            <div id="ex11" class="question mt-4">
+                                                <div class="question-header question-choice-container row">
+                                                    <div class="question-num col-1 text-right">12)</div>
+                                                    <div class="phrase col-5  pl-2"><span class="concept_a">PersonX reads a book</span>,  as a result, PersonY or others want,  <span class="concept_b">nothing in particular</span></div>
+                                                    <div class="ex-response btn-group-container col-2">
+                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                            <label class="btn btn-secondary btn-sm active" for="1">
+                                                                <input type="radio" name="example1_valid" autocomplete="off" value="1" disabled>sometimes/likely
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="reason col-4">
+                                                      Phrase B is a bit <b>vague</b>. This just means that there is no reaction on the part of PersonY or others (those people around PersonX)
+                                                      given the situation of PersonX reading a book. This being a sensible enough reality, we'd say this might be true sometimes.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- EXAMPLES END -->
+                        </div>
+                        <!-- ACCORDION END -->
+
+                        <!-- MTURK INPUT START -->
+                        <div class="col-12 mt-3 mb-1 border-top">
+
+                            <form name='mturk_form' method='post' id='mturk_form' action='https://www.mturk.com/mturk/externalSubmit'>
+                                <input type='hidden' value='' name='assignmentId' id='assignmentId'/>
+                                <input type='hidden' name='ee' id='ee'/>
+
+                                <!-- QUESTION MACRO START -->
+                                
+                                <!-- GOAL CATEGORY MACRO END -->
+
+                                <!-- GOAL CAT START -->
+                                
+                                <div id="question-1" class="question">
+                                    <div class="question-header question-choice-container pl-5 mb-2 pt-2 pb-2 border-bottom">
+                                        <div class="row"><div>1) <span class="concept_a">${head1}</span>,  ${readable_relation1},  <span class="concept_b">${tail1}</span></div></div>
+                                        <div class="row row-12 pl-3 pt-2">
+                                            <strong><em>How often does the assertion hold true?</em></strong>
+                                        </div>
+                                        <div class="row-12 pt-1 btn-group-container col-5">
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn btn-secondary btn-sm" for="2">
+                                                    <input class="required" type="radio" name="q1_valid" id="q1_valid_1" autocomplete="off" value="2" required>always/often
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="1">
+                                                    <input class="required" type="radio" name="q1_valid" id="q1_valid_2" autocomplete="off" value="1" required>sometimes/likely
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="-1">
+                                                    <input class="required" type="radio" name="q1_valid" id="q1_valid_3" autocomplete="off" value="-1" required>farfetched/never
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="-2">
+                                                    <input class="required" type="radio" name="q1_valid" id="q1_valid_4" autocomplete="off" value="-2" required>invalid
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="-9">
+                                                    <input class="required" type="radio" name="q1_valid" id="q1_valid_5" autocomplete="off" value="-9" required>too unfamiliar to judge
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row-10">
+                                          <input type="checkbox" id="antiquated1" name="antiquated1">
+                                          <label for="antiquated1"><small>This fact is true but outdated</small></label>
+                                         </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div id="question-2" class="question">
+                                    <div class="question-header question-choice-container pl-5 mb-2 pt-2 pb-2 border-bottom">
+                                        <div class="row"><div>2) <span class="concept_a">${head2}</span>,  ${readable_relation2},  <span class="concept_b">${tail2}</span></div></div>
+                                        <div class="row row-12 pl-3 pt-2">
+                                            <strong><em>How often does the assertion hold true?</em></strong>
+                                        </div>
+                                        <div class="row-12 pt-1 btn-group-container col-5">
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn btn-secondary btn-sm" for="2">
+                                                    <input class="required" type="radio" name="q2_valid" id="q2_valid_1" autocomplete="off" value="2" required>always/often
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="1">
+                                                    <input class="required" type="radio" name="q2_valid" id="q2_valid_2" autocomplete="off" value="1" required>sometimes/likely
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="-1">
+                                                    <input class="required" type="radio" name="q2_valid" id="q2_valid_3" autocomplete="off" value="-1" required>farfetched/never
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="-2">
+                                                    <input class="required" type="radio" name="q2_valid" id="q2_valid_4" autocomplete="off" value="-2" required>invalid
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="-9">
+                                                    <input class="required" type="radio" name="q2_valid" id="q2_valid_5" autocomplete="off" value="-9" required>too unfamiliar to judge
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row-10">
+                                          <input type="checkbox" id="antiquated2" name="antiquated2">
+                                          <label for="antiquated2"><small>This fact is true but outdated</small></label>
+                                         </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div id="question-3" class="question">
+                                    <div class="question-header question-choice-container pl-5 mb-2 pt-2 pb-2 border-bottom">
+                                        <div class="row"><div>3) <span class="concept_a">${head3}</span>,  ${readable_relation3},  <span class="concept_b">${tail3}</span></div></div>
+                                        <div class="row row-12 pl-3 pt-2">
+                                            <strong><em>How often does the assertion hold true?</em></strong>
+                                        </div>
+                                        <div class="row-12 pt-1 btn-group-container col-5">
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn btn-secondary btn-sm" for="2">
+                                                    <input class="required" type="radio" name="q3_valid" id="q3_valid_1" autocomplete="off" value="2" required>always/often
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="1">
+                                                    <input class="required" type="radio" name="q3_valid" id="q3_valid_2" autocomplete="off" value="1" required>sometimes/likely
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="-1">
+                                                    <input class="required" type="radio" name="q3_valid" id="q3_valid_3" autocomplete="off" value="-1" required>farfetched/never
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="-2">
+                                                    <input class="required" type="radio" name="q3_valid" id="q3_valid_4" autocomplete="off" value="-2" required>invalid
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="-9">
+                                                    <input class="required" type="radio" name="q3_valid" id="q3_valid_5" autocomplete="off" value="-9" required>too unfamiliar to judge
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row-10">
+                                          <input type="checkbox" id="antiquated3" name="antiquated3">
+                                          <label for="antiquated3"><small>This fact is true but outdated</small></label>
+                                         </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div id="question-4" class="question">
+                                    <div class="question-header question-choice-container pl-5 mb-2 pt-2 pb-2 border-bottom">
+                                        <div class="row"><div>4) <span class="concept_a">${head4}</span>,  ${readable_relation4},  <span class="concept_b">${tail4}</span></div></div>
+                                        <div class="row row-12 pl-3 pt-2">
+                                            <strong><em>How often does the assertion hold true?</em></strong>
+                                        </div>
+                                        <div class="row-12 pt-1 btn-group-container col-5">
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn btn-secondary btn-sm" for="2">
+                                                    <input class="required" type="radio" name="q4_valid" id="q4_valid_1" autocomplete="off" value="2" required>always/often
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="1">
+                                                    <input class="required" type="radio" name="q4_valid" id="q4_valid_2" autocomplete="off" value="1" required>sometimes/likely
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="-1">
+                                                    <input class="required" type="radio" name="q4_valid" id="q4_valid_3" autocomplete="off" value="-1" required>farfetched/never
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="-2">
+                                                    <input class="required" type="radio" name="q4_valid" id="q4_valid_4" autocomplete="off" value="-2" required>invalid
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="-9">
+                                                    <input class="required" type="radio" name="q4_valid" id="q4_valid_5" autocomplete="off" value="-9" required>too unfamiliar to judge
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row-10">
+                                          <input type="checkbox" id="antiquated4" name="antiquated4">
+                                          <label for="antiquated4"><small>This fact is true but outdated</small></label>
+                                         </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div id="question-5" class="question">
+                                    <div class="question-header question-choice-container pl-5 mb-2 pt-2 pb-2 border-bottom">
+                                        <div class="row"><div>5) <span class="concept_a">${head5}</span>,  ${readable_relation5},  <span class="concept_b">${tail5}</span></div></div>
+                                        <div class="row row-12 pl-3 pt-2">
+                                            <strong><em>How often does the assertion hold true?</em></strong>
+                                        </div>
+                                        <div class="row-12 pt-1 btn-group-container col-5">
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn btn-secondary btn-sm" for="2">
+                                                    <input class="required" type="radio" name="q5_valid" id="q5_valid_1" autocomplete="off" value="2" required>always/often
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="1">
+                                                    <input class="required" type="radio" name="q5_valid" id="q5_valid_2" autocomplete="off" value="1" required>sometimes/likely
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="-1">
+                                                    <input class="required" type="radio" name="q5_valid" id="q5_valid_3" autocomplete="off" value="-1" required>farfetched/never
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="-2">
+                                                    <input class="required" type="radio" name="q5_valid" id="q5_valid_4" autocomplete="off" value="-2" required>invalid
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm" for="-9">
+                                                    <input class="required" type="radio" name="q5_valid" id="q5_valid_5" autocomplete="off" value="-9" required>too unfamiliar to judge
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row-10">
+                                          <input type="checkbox" id="antiquated5" name="antiquated5">
+                                          <label for="antiquated5"><small>This fact is true but outdated</small></label>
+                                         </div>
+                                    </div>
+                                </div>
+                                
+
+                                <!-- GOAL CAT END -->
+
+                                <!-- OPTIONAL FEEDBACK --> 
+                                <div class="row mt-5">
+                                    <div class="col-8 offset-2 col-lg-6 offset-lg-3">
+                                        <p>(Optional) Please let us know if anything was unclear, if you experienced any issues, or if you have any other fedback for us.</p>
+                                        <textarea id="feedback" name="feedback" rows=3></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- SUBMIT BUTTON --> 
+                                <div class="row mt-5">
+                                    <div class="col-2 offset-5">
+                                        <input id="submitButton" onclick="getnext()" type="submit" value="Submit">
+                                    </div>
+                                </div>
+            
+                            </form>
+                            <script language='Javascript'>turkSetAssignmentID();</script>
+                        </div>
+                        <!-- MTURK INPUT END -->
+
+                    </div>
+		    <!-- HIT END -->
+
+                <!-- BOOSTRAP JS -->
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+                <!-- HITPUB JS -->
+                <script id="hitpub_js">
+                    // TimeMe.js
+                    (function () { var e, t; e = this, t = function () { var r = { startStopTimes: {}, idleTimeoutMs: 3e4, currentIdleTimeMs: 0, checkStateRateMs: 250, active: !1, idle: !1, currentPageName: "default-page-name", timeElapsedCallbacks: [], userLeftCallbacks: [], userReturnCallbacks: [], trackTimeOnElement: function (e) { var t = document.getElementById(e); t && (t.addEventListener("mouseover", function () { r.startTimer(e) }), t.addEventListener("mousemove", function () { r.startTimer(e) }), t.addEventListener("mouseleave", function () { r.stopTimer(e) }), t.addEventListener("keypress", function () { r.startTimer(e) }), t.addEventListener("focus", function () { r.startTimer(e) })) }, getTimeOnElementInSeconds: function (e) { var t = r.getTimeOnPageInSeconds(e); return t || 0 }, startTimer: function (e, t) { if (e || (e = r.currentPageName), void 0 === r.startStopTimes[e]) r.startStopTimes[e] = []; else { var n = r.startStopTimes[e], i = n[n.length - 1]; if (void 0 !== i && void 0 === i.stopTime) return } r.startStopTimes[e].push({ startTime: t || new Date, stopTime: void 0 }), r.active = !0, r.idle = !1 }, stopAllTimers: function () { for (var e = Object.keys(r.startStopTimes), t = 0; t < e.length; t++)r.stopTimer(e[t]) }, stopTimer: function (e, t) { e || (e = r.currentPageName); var n = r.startStopTimes[e]; void 0 !== n && 0 !== n.length && (void 0 === n[n.length - 1].stopTime && (n[n.length - 1].stopTime = t || new Date), r.active = !1) }, getTimeOnCurrentPageInSeconds: function () { return r.getTimeOnPageInSeconds(r.currentPageName) }, getTimeOnPageInSeconds: function (e) { var t = r.getTimeOnPageInMilliseconds(e); return void 0 === t ? void 0 : t / 1e3 }, getTimeOnCurrentPageInMilliseconds: function () { return r.getTimeOnPageInMilliseconds(r.currentPageName) }, getTimeOnPageInMilliseconds: function (e) { var t = r.startStopTimes[e]; if (void 0 !== t) { for (var n = 0, i = 0; i < t.length; i++) { var s = t[i].startTime, o = t[i].stopTime; void 0 === o && (o = new Date), n += o - s } return Number(n) } }, getTimeOnAllPagesInSeconds: function () { for (var e = [], t = Object.keys(r.startStopTimes), n = 0; n < t.length; n++) { var i = t[n], s = r.getTimeOnPageInSeconds(i); e.push({ pageName: i, timeOnPage: s }) } return e }, setIdleDurationInSeconds: function (e) { var t = parseFloat(e); if (!1 !== isNaN(t)) throw { name: "InvalidDurationException", message: "An invalid duration time (" + e + ") was provided." }; return r.idleTimeoutMs = 1e3 * e, this }, setCurrentPageName: function (e) { return r.currentPageName = e, this }, resetRecordedPageTime: function (e) { delete r.startStopTimes[e] }, resetAllRecordedPageTimes: function () { for (var e = Object.keys(r.startStopTimes), t = 0; t < e.length; t++)r.resetRecordedPageTime(e[t]) }, resetIdleCountdown: function () { r.idle && r.triggerUserHasReturned(), r.idle = !1, r.currentIdleTimeMs = 0 }, callWhenUserLeaves: function (e, t) { this.userLeftCallbacks.push({ callback: e, numberOfTimesToInvoke: t }) }, callWhenUserReturns: function (e, t) { this.userReturnCallbacks.push({ callback: e, numberOfTimesToInvoke: t }) }, triggerUserHasReturned: function () { if (!r.active) for (var e = 0; e < this.userReturnCallbacks.length; e++) { var t = this.userReturnCallbacks[e], n = t.numberOfTimesToInvoke; (isNaN(n) || void 0 === n || 0 < n) && (t.numberOfTimesToInvoke -= 1, t.callback()) } r.startTimer() }, triggerUserHasLeftPage: function () { if (r.active) for (var e = 0; e < this.userLeftCallbacks.length; e++) { var t = this.userLeftCallbacks[e], n = t.numberOfTimesToInvoke; (isNaN(n) || void 0 === n || 0 < n) && (t.numberOfTimesToInvoke -= 1, t.callback()) } r.stopAllTimers() }, callAfterTimeElapsedInSeconds: function (e, t) { r.timeElapsedCallbacks.push({ timeInSeconds: e, callback: t, pending: !0 }) }, checkState: function () { for (var e = 0; e < r.timeElapsedCallbacks.length; e++)r.timeElapsedCallbacks[e].pending && r.getTimeOnCurrentPageInSeconds() > r.timeElapsedCallbacks[e].timeInSeconds && (r.timeElapsedCallbacks[e].callback(), r.timeElapsedCallbacks[e].pending = !1); !1 === r.idle && r.currentIdleTimeMs > r.idleTimeoutMs ? (r.idle = !0, r.triggerUserHasLeftPage()) : r.currentIdleTimeMs += r.checkStateRateMs }, visibilityChangeEventName: void 0, hiddenPropName: void 0, listenForVisibilityEvents: function () { void 0 !== document.hidden ? (r.hiddenPropName = "hidden", r.visibilityChangeEventName = "visibilitychange") : void 0 !== document.mozHidden ? (r.hiddenPropName = "mozHidden", r.visibilityChangeEventName = "mozvisibilitychange") : void 0 !== document.msHidden ? (r.hiddenPropName = "msHidden", r.visibilityChangeEventName = "msvisibilitychange") : void 0 !== document.webkitHidden && (r.hiddenPropName = "webkitHidden", r.visibilityChangeEventName = "webkitvisibilitychange"), document.addEventListener(r.visibilityChangeEventName, function () { document[r.hiddenPropName] ? r.triggerUserHasLeftPage() : r.triggerUserHasReturned() }, !1), window.addEventListener("blur", function () { r.triggerUserHasLeftPage() }), window.addEventListener("focus", function () { r.triggerUserHasReturned() }), document.addEventListener("mousemove", function () { r.resetIdleCountdown() }), document.addEventListener("keyup", function () { r.resetIdleCountdown() }), document.addEventListener("touchstart", function () { r.resetIdleCountdown() }), window.addEventListener("scroll", function () { r.resetIdleCountdown() }), setInterval(function () { r.checkState() }, r.checkStateRateMs) }, websocket: void 0, websocketHost: void 0, setUpWebsocket: function (e) { if (window.WebSocket && e) { var t = e.websocketHost; try { r.websocket = new WebSocket(t), window.onbeforeunload = function () { r.sendCurrentTime(e.appId) }, r.websocket.onopen = function () { r.sendInitWsRequest(e.appId) }, r.websocket.onerror = function (e) { console && console.log("Error occurred in websocket connection: " + e) }, r.websocket.onmessage = function (e) { console && console.log(e.data) } } catch (e) { console && console.error("Failed to connect to websocket host.  Error:" + e) } } return this }, websocketSend: function (e) { r.websocket.send(JSON.stringify(e)) }, sendCurrentTime: function (e) { var t = { type: "INSERT_TIME", appId: e, timeOnPageMs: r.getTimeOnCurrentPageInMilliseconds(), pageName: r.currentPageName }; r.websocketSend(t) }, sendInitWsRequest: function (e) { var t = { type: "INIT", appId: e }; r.websocketSend(t) }, initialize: function (e) { var t = r.idleTimeoutMs || 30, n = r.currentPageName || "default-page-name", i = void 0, s = void 0; e && (t = e.idleTimeoutInSeconds || t, n = e.currentPageName || n, i = e.websocketOptions, s = e.initialStartTime), r.setIdleDurationInSeconds(t).setCurrentPageName(n).setUpWebsocket(i).listenForVisibilityEvents(), r.startTimer(void 0, s) } }; return r }, "undefined" != typeof module && module.exports ? module.exports = t() : "function" == typeof define && define.amd ? define([], function () { return e.TimeMe = t() }) : e.TimeMe = t() }).call(this);
+                    
+                    TimeMe.initialize({
+                        currentPageName: "task",
+                        idleTimeoutInSeconds: 30
+                    });
+                    
+                    $(document).ready(function() {
+                        $('#submitButton').click(function () {
+                            try {
+                                $('input[name=ee]').attr('value', TimeMe.getTimeOnCurrentPageInSeconds());
+                            } catch {
+                            }
+                            return true;
+                        });
+                    });
+                </script>

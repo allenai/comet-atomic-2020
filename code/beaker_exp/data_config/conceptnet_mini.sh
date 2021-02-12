@@ -1,0 +1,1 @@
+IMAGE="mosaic-kgs-$(git rev-parse --short HEAD)" beaker experiment create -f conceptnet_mini.yml

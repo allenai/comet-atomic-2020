@@ -1,0 +1,24 @@
+description: GPT2 Zeroshot Eval
+tasks:
+  - name: gpt2-zeroshot
+    cluster: ai2/on-prem-ai2-server2
+    spec:
+      env:
+        GPT2_MODEL: "gpt2-large"
+        SEED: 42
+        DATA_PATH: /data/
+        MODEL_SAVE_LOCATION: /models
+        OUTPUT_DIR: /models
+        TOP_K: 10
+        NUM_BEAMS: 10
+        NUM_SEQUENCES: 10
+      image: {{ .Env.IMAGE }}
+      resultPath: /models
+      requirements:
+        gpuCount: 1
+      datasetMounts:
+        - datasetId: ds_ov34cyinxo7z
+          containerPath: /data
+      args:
+        - python
+        - gpt2-zeroshot.py

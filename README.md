@@ -1,14 +1,18 @@
-# COMET-ATOMIC-2020
+# (Comet-) ATOMIC 2020: On Symbolic and Neural Commonsense Knowledge Graphs
 Codebase and data for AAAI 2021
+
+## Summary
+Jena D. Hwang, Chandra Bhagavatula, Ronan Le Bras, Jeff Da, Keisuke Sakaguchi, Antoine Bosselut, Yejin Choi\
+["(Comet-) Atomic 2020: On Symbolic and Neural Commonsense Knowledge Graphs."](https://arxiv.org/abs/2010.05953) \
+Appearing at AAAI Conference on Artificial Intelligence 2021
 
 ## Data
 
 Data for ATOMIC 2020 [data/](data/). ATOMIC data ([Sap et al. 2019](https://arxiv.org/abs/1811.00146)) is also included in the directory.
 
-## Reference
-Jena D. Hwang, Chandra Bhagavatula, Ronan Le Bras, Jeff Da, Keisuke Sakaguchi, Antoine Bosselut, Yejin Choi\
-["(Comet-) Atomic 2020: On Symbolic and Neural Commonsense Knowledge Graphs."](https://arxiv.org/abs/2010.05953) \
-Appearing at AAAI Conference on Artificial Intelligence 2021
+## Codebase
+
+We include code used in expirements in COMET-ATOMIC2020 for reproducibility, ease of use in [code/](code/). Our models are based off the [HuggingFace Transformers](https://huggingface.co/) codebase, with minor adjustments to adapt the model for our data. Details can be found in the AAAI paper.
 
 ## License
 ATOMIC 2020 (data) and COMET-ATOMIC 2020 (codebase) are licensed under the Apache License 2.0. The dataset is licensed under CC-BY.
