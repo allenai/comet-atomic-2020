@@ -15,6 +15,10 @@ Data for ATOMIC 2020 [data/](data/). ATOMIC data ([Sap et al. 2019](https://arxi
 
 We include code used in expirements in COMET-ATOMIC2020 for reproducibility, ease of use in [code/](code/). Our models are based off the [HuggingFace Transformers](https://huggingface.co/) codebase, with minor adjustments to adapt the model for our data. Details can be found in the AAAI paper.
 
+## Contributions
+
+We welcome contributions to the codebase of COMET-2020. We encourage pull requests instead of issues; and suggest filing a GitHub issue with questions / suggestions.
+
 ## License
 ATOMIC 2020 (data) and COMET-ATOMIC 2020 (codebase) are licensed under the Apache License 2.0. The dataset is licensed under CC-BY.
 
