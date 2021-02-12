@@ -1,5 +1,6 @@
 # (Comet-) ATOMIC 2020: On Symbolic and Neural Commonsense Knowledge Graphs
-Codebase and data for AAAI 2021
+
+![Example for ATOMIC2020](header.png "Example of ATOMIC2020, a new commonsense knowledge graph covering social, physical, and eventive aspects of everyday inferential knowledge.")
 
 ## Summary
 Jena D. Hwang, Chandra Bhagavatula, Ronan Le Bras, Jeff Da, Keisuke Sakaguchi, Antoine Bosselut, Yejin Choi\
