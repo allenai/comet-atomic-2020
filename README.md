@@ -2,14 +2,15 @@
 
 ![Example for ATOMIC2020](header.png "Example of ATOMIC2020, a new commonsense knowledge graph covering social, physical, and eventive aspects of everyday inferential knowledge.")
 
-## Summary
+
+## Paper
 Jena D. Hwang, Chandra Bhagavatula, Ronan Le Bras, Jeff Da, Keisuke Sakaguchi, Antoine Bosselut, Yejin Choi\
 ["(Comet-) Atomic 2020: On Symbolic and Neural Commonsense Knowledge Graphs."](https://arxiv.org/abs/2010.05953) \
 Appearing at AAAI Conference on Artificial Intelligence 2021
 
 ## Data
 
-Data for ATOMIC 2020 [data/](data/). ATOMIC data ([Sap et al. 2019](https://arxiv.org/abs/1811.00146)) is also included in the directory.
+Data for ATOMIC 2020 [data/](data/). ATOMIC data ( [Sap et al. 2018](https://arxiv.org/abs/1811.00146) ) is downloadable [here](https://storage.googleapis.com/ai2-mosaic/public/atomic/v1.0/atomic_data.tgz).
 
 ## Codebase
 
