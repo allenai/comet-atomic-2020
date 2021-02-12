@@ -21,7 +21,7 @@ We include code used in expirements in COMET-ATOMIC2020 for reproducibility, eas
 We welcome contributions to the codebase of COMET-2020. We encourage pull requests instead of issues; and suggest filing a GitHub issue with questions / suggestions.
 
 ## License
-ATOMIC 2020 (data) and COMET-ATOMIC 2020 (codebase) are licensed under the Apache License 2.0. The dataset is licensed under CC-BY.
+COMET-ATOMIC 2020 (codebase) is licensed under the Apache License 2.0. The paper and ATOMIC 2020 (dataset) is licensed under CC-BY.
 
 ## Contact
 Email: jenah[at]allenai[dot]org
