@@ -10,7 +10,7 @@ Appearing at AAAI Conference on Artificial Intelligence 2021
 
 ## Data
 
-Data for ATOMIC 2020 [data/](data/). ATOMIC data ( [Sap et al. 2018](https://arxiv.org/abs/1811.00146) ) is downloadable [here](https://storage.googleapis.com/ai2-mosaic/public/atomic/v1.0/atomic_data.tgz).
+The data for ATOMIC 2020 is available in the [data/](data/) folder. If you need the ATOMIC 2018 data ( [Sap et al. 2018](https://arxiv.org/abs/1811.00146) ) it is downloadable [here](https://storage.googleapis.com/ai2-mosaic/public/atomic/v1.0/atomic_data.tgz).
 
 ## Codebase
 
