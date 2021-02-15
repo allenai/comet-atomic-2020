@@ -1,0 +1,37 @@
+description: GPT2 COMET 2020 Pipeline - COMET ATOMIC Generation
+tasks:
+  - name: gpt2-comet-atomic-generate-test
+    cluster: ai2/on-prem-mosaic-server2
+    spec:
+      env:
+        VALID_BATCH_SIZE: 32   # input batch size for testing (default: 1000)
+        TRAIN_DATA_PATH: "/data/atomic_train.tsv"
+        DEV_DATA_PATH: "/data/atomic_dev.tsv"
+        TEST_DATA_PATH: "/data/atomic_test.tsv"
+        IN_LEN: 19
+        OUT_LEN: 45
+#        GPT2_MODEL: "/trained-gpt2-large-model"
+        GPT2_MODEL: "/trained-gpt2-xl-model"
+#        PRED_FILE: "/test-data/atomic/test_sampled_prefixes.jsonl"
+        PRED_FILE: "/data/atomic_test.tsv"
+        DO_TRAIN: False
+        DO_PRED: True
+        TOP_K: 1
+#        TOKENIZER: "/trained-gpt2-large-model/checkpoint_0/"
+        TOKENIZER: "/trained-gpt2-xl-model/iter_0_tokenizer/"
+      image: {{ .Env.IMAGE }}
+      resultPath: /models
+      requirements:
+        gpuCount: 1
+      datasetMounts:
+        - datasetId: ds_bldl01i7eknc
+          containerPath: /data
+        - datasetId: ds_76jkzbmmi8n9
+          containerPath: /trained-gpt2-large-model
+        - datasetId: ds_ov34cyinxo7z
+          containerPath: /test-data
+        - datasetId: ds_6l47avjhs2wx # Source https://beaker.org/ex/ex_1c7mhlgsl1br/tasks/tk_bdz5izug3wpg
+          containerPath: /trained-gpt2-xl-model
+      args:
+        - python
+        - comet_gpt2.py

@@ -1,0 +1,27 @@
+description: T5 COMET 2020 Pipeline - ATOMIC system eval
+tasks:
+  - name: t5-comet-atomic
+    cluster: ai2/on-prem-ai2-server2
+    spec:
+      env:
+        TRAIN_BATCH_SIZE: 350  # input batch size for training (default: 64)
+        VALID_BATCH_SIZE: 16   # input batch size for testing (default: 1000)
+        TRAIN_EPOCHS: 1        # number of epochs to train (default: 10)
+        VAL_EPOCHS: 1 
+        LEARNING_RATE: 0.01   # learning rate (default: 0.01)
+        SEED: 42               # random seed (default: 42)
+        OUT_LEN: 18
+        IN_LEN: 16
+        TRAIN_DATA_PATH: "/data/atomic_train.tsv"
+        DEV_DATA_PATH: "/data/atomic_dev.tsv"
+        TEST_DATA_PATH: "/data/atomic_test.tsv"
+      image: {{ .Env.IMAGE }}
+      resultPath: /models
+      requirements:
+        gpuCount: 1
+      datasetMounts:
+        - datasetId: t5-dataset 
+          containerPath: /data
+      args:
+        - python
+        - comet_t5.py

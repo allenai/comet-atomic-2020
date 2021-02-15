@@ -1,0 +1,37 @@
+description: GPT2 COMET 2020 Pipeline - COMET Conceptnet Generation
+tasks:
+  - name: gpt2-comet-conceptnet-generate-test
+    cluster: ai2/on-prem-ai2-server1
+    spec:
+      env:
+        VALID_BATCH_SIZE: 32   # input batch size for testing (default: 1000)
+        TRAIN_DATA_PATH: "/data/conceptnet_train.tsv"
+        DEV_DATA_PATH: "/data/conceptnet_dev.tsv"
+        TEST_DATA_PATH: "/data/conceptnet_test.tsv"
+        IN_LEN: 19
+        OUT_LEN: 44
+#        GPT2_MODEL: "/trained-gpt2-large-model"
+        GPT2_MODEL: "/trained-gpt2-xl-model"
+#        PRED_FILE: "/test-data/conceptnet/test_sampled_prefixes.jsonl"
+        PRED_FILE: "/data/conceptnet_test.tsv"
+        DO_TRAIN: False
+        DO_PRED: True
+        TOP_K: 1
+#        TOKENIZER: "/trained-gpt2-large-model/checkpoint_0/"
+        TOKENIZER: "/trained-gpt2-xl-model/iter_0_tokenizer/"
+      image: {{ .Env.IMAGE }}
+      resultPath: /models
+      requirements:
+        gpuCount: 1
+      datasetMounts:
+        - datasetId: ds_bldl01i7eknc
+          containerPath: /data
+        - datasetId: ds_mpgxdl4jiedd
+          containerPath: /trained-gpt2-large-model
+        - datasetId: ds_ov34cyinxo7z
+          containerPath: /test-data
+        - datasetId: ds_tb4xc8bpwxme
+          containerPath: /trained-gpt2-xl-model
+      args:
+        - python
+        - comet_gpt2.py

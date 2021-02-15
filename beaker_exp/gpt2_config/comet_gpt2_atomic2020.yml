@@ -1,0 +1,30 @@
+description: GPT2 COMET 2020 Pipeline - COMET Atomic2020
+tasks:
+  - name: gpt2-comet-atomic2020
+    cluster: ai2/on-prem-ai2-server2
+    spec:
+      env:
+        TRAIN_BATCH_SIZE: 32  # input batch size for training (default: 64)
+        VALID_BATCH_SIZE: 32   # input batch size for testing (default: 1000)
+        TRAIN_EPOCHS: 1        # number of epochs to train (default: 10)
+        VAL_EPOCHS: 1 
+        LEARNING_RATE: 0.00005   # learning rate (default: 0.01)
+        SEED: 42               # random seed (default: 42)
+        TRAIN_DATA_PATH: "/data/atomic2020_train.tsv"
+        DEV_DATA_PATH: "/data/atomic2020_dev.tsv"
+        TEST_DATA_PATH: "/data/atomic2020_test.tsv"
+        IN_LEN: 19
+        OUT_LEN: 44
+        GPT2_MODEL: "/gpt2-xl"
+      image: {{ .Env.IMAGE }}
+      resultPath: /models
+      requirements:
+        gpuCount: 1
+      datasetMounts:
+        - datasetId: ds_bldl01i7eknc
+          containerPath: /data
+        - datasetId: ds_87rekfgmu7fp
+          containerPath: /gpt2-xl
+      args:
+        - python
+        - comet_gpt2.py

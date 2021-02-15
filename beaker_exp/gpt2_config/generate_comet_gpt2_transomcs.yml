@@ -1,0 +1,39 @@
+description: GPT2 COMET 2020 Pipeline - COMET TransOMCS Generation
+tasks:
+  - name: gpt2-comet-transomcs-generate-test
+    cluster: ai2/on-prem-ai2-server1
+    spec:
+      env:
+        VALID_BATCH_SIZE: 32   # input batch size for testing (default: 1000)
+        TRAIN_DATA_PATH: "/data/transomcs_train.tsv"
+        DEV_DATA_PATH: "/data/transomcs_dev.tsv"
+        TEST_DATA_PATH: "/data/transomcs_test.tsv"
+        IN_LEN: 19
+        OUT_LEN: 44
+#        GPT2_MODEL: "/trained-gpt2-large-model/"
+        GPT2_MODEL: "/trained-gpt2-xl-model/"
+#        PRED_FILE: "/test-data/transomcs/test_sampled_prefixes.jsonl"
+        PRED_FILE: "/data/transomcs_test.tsv"
+        DO_TRAIN: False
+        DO_PRED: True
+        TOP_K: 1
+        TOKENIZER: "/trained-gpt2-large-model/checkpoint_0/"
+#        TOKENIZER: "/trained-gpt2-xl-model/checkpoint_0/"
+      image: {{ .Env.IMAGE }}
+      resultPath: /models
+      requirements:
+        gpuCount: 1
+      datasetMounts:
+        - datasetId: ds_yi6ma1pwef76
+          containerPath: /data
+        - datasetId: ds_14h9xr2xd99z
+          containerPath: /trained-gpt2-large-model
+        - datasetId: ds_ov34cyinxo7z
+          containerPath: /test-data
+#        - datasetId: ds_fytvem7fkz5x # Source: https://beaker.org/ex/ex_0iktjc2inl6o/tasks/tk_1e8oouw74tha
+#          containerPath: /trained-gpt2-xl-model
+        - datasetId: ds_t6d9thq9ocw1 # Source: https://beaker.org/ex/ex_0iktjc2inl6o/tasks/tk_1e8oouw74tha
+          containerPath: /trained-gpt2-xl-model
+      args:
+        - python
+        - comet_gpt2.py
