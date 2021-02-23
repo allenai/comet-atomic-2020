@@ -7,11 +7,11 @@ Jena D. Hwang, Chandra Bhagavatula, Ronan Le Bras, Jeff Da, Keisuke Sakaguchi, A
 ["(Comet-) Atomic 2020: On Symbolic and Neural Commonsense Knowledge Graphs."](https://arxiv.org/abs/2010.05953) \
 Appearing at AAAI Conference on Artificial Intelligence 2021
 
-## Data
+## Data: ATOMIC 2020
 
 The data for ATOMIC 2020 is available [here](https://allenai.org/data/atomic-2020). If you need the ATOMIC 2018 data ( [Sap et al. 2018](https://arxiv.org/abs/1811.00146) ) it is downloadable [here](https://allenai.org/data/atomic).
 
-## COMET
+## Model: COMET-ATOMIC 2020
 
 Trained COMET model can be downloaded [here](https://storage.googleapis.com/ai2-mosaic-public/projects/mosaic-kgs/comet-atomic_2020_BART.zip).
 
