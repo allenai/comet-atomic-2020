@@ -10,4 +10,15 @@
 
         bash run.sh
 
-3 the results are stored at `./results/`
+3. the results are stored at `./results/`
+
+
+## use our model
+
+1. download the model file
+
+        bash download_model.sh
+
+2. sample usage 
+
+        python ./generation_example.py
