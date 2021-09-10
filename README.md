@@ -13,7 +13,9 @@ The data for ATOMIC 2020 is available [here](https://allenai.org/data/atomic-202
 
 ## Model: COMET-ATOMIC 2020
 
-Trained COMET model can be downloaded [here](https://storage.googleapis.com/ai2-mosaic-public/projects/mosaic-kgs/comet-atomic_2020_BART.zip).
+Trained COMET-BART model can be downloaded [here](https://storage.googleapis.com/ai2-mosaic-public/projects/mosaic-kgs/comet-atomic_2020_BART.zip).
+
+Trained COMET-GPT2XL model can be downloaded [here](https://storage.googleapis.com/ai2-mosaic-public/projects/mosaic-kgs/comet-atomic_2020_GPT2XL.zip).
 
 
 ## Codebase
