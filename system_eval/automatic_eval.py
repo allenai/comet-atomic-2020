@@ -21,6 +21,10 @@ def get_refs_preds(l, type=1):
         tails = l["fact"]["tails"]
         head = l["fact"]["head"]
         gens = l["generations"]
+    if type==4:
+        tails = l["target"]
+        head = l["source"]
+        gens = l["generations"]
     return gens, tails, head
 
 def get2(l):
@@ -28,7 +32,6 @@ def get2(l):
 
 
 def topk_eval(model_name, data, data_type, k):
-
     topk_gts = {}
     topk_res = {}
     topk_exact_match = []

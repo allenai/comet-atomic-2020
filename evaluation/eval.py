@@ -106,7 +106,7 @@ def preprocess(file_name, keys):
     predictions = {}
     references = {}
     sources = {}
-    keys_list = keys if keys!=None else generations[0]["generations"].keys()
+    keys_list = keys if keys!=None else generations["generations"]
     for key in keys_list:
         references[key] = []
         predictions[key] = []
