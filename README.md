@@ -7,6 +7,16 @@
 Jena D. Hwang, Chandra Bhagavatula, Ronan Le Bras, Jeff Da, Keisuke Sakaguchi, Antoine Bosselut, Yejin Choi\
 AAAI Conference on Artificial Intelligence, 2021
 
+If you'd like to cite this paper, please use the reference below:
+```
+@inproceedings{Hwang2021COMETATOMIC2O,
+  title={COMET-ATOMIC 2020: On Symbolic and Neural Commonsense Knowledge Graphs},
+  author={Jena D. Hwang and Chandra Bhagavatula and Ronan {Le Bras} and Jeff Da and Keisuke Sakaguchi and Antoine Bosselut and Yejin Choi},
+  booktitle={AAAI},
+  year={2021}
+}
+```
+
 ## Data: ATOMIC 2020
 
 The data for ATOMIC 2020 is available [here](https://allenai.org/data/atomic-2020). If you need the ATOMIC 2019 data ([Sap et al., 2019](https://www.semanticscholar.org/paper/ATOMIC%3A-An-Atlas-of-Machine-Commonsense-for-If-Then-Sap-Bras/8209a8703d8c48aaca1523cfa307dd1c069e58f3)), it is downloadable [here](https://allenai.org/data/atomic).
