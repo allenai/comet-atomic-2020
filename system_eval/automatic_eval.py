@@ -92,17 +92,13 @@ def main():
 
     #parser.add_argument('--input-file', type=str, help='Dataset filename', default='./data/atomic2020-zeroshot-generations.jsonl')
     parser.add_argument('--input-file', type=str, help='Dataset filename', default='./data/BART/BART-conceptnet.json')
-
+    parser.add_argument('--type', type=int, help="Dataset type", default=1)
+    parser.add_argument('--name', type=str, help="Name to refer to dataset", default="")
     args = parser.parse_args()
 
     # Eval
     expts = [
-        ['./data/BART/BART-atomic_2020.json', "BART-ATOMIC2020", 2],
-        ['./data/BART/BART-conceptnet.json', "BART-ConceptNet", 2],
-        ['./data/BART/BART-transomcs.json', "BART-TransOMCS", 2],
-        ['./data/GPT2/atomic-zeroshot-generations.jsonl', "GPT2-0shot-ATOMIC", 1],
-        ['./data/GPT2/atomic2020-zeroshot-generations.jsonl', "GPT2-0shot-ATOMIC2020", 1],
-        ['./data/T5/atomic2020-generations.jsonl', "T5-L-ATOMIC2020", 3],
+        [args.input_file, args.name, args.type]
     ]
 
     add_column = True
