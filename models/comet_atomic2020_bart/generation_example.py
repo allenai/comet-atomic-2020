@@ -111,16 +111,16 @@ if __name__ == "__main__":
 
     # sample usage
     print("model loading ...")
-    comet = Comet("./comet-atomic_2020_BART")
+    comet = Comet("./comet-atomic_2020_BART_aaai")
     comet.model.zero_grad()
     print("model loaded")
 
     queries = []
-    head = "PersonX eats an apple"
-    rel = "xNeed"
-    query = "{} {} [GEN]".format(head, rel)
+    head = "PersonX pleases ___ to make"
+    rel = "xWant"
+    query = "{} {}".format(head, rel)
     queries.append(query)
     print(queries)
-    results = comet.generate(queries, decode_method="beam", num_generate=5)
+    results = comet.generate(queries, decode_method="beam", num_generate=10)
     print(results)
 
