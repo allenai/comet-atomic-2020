@@ -120,7 +120,7 @@ if __name__ == "__main__":
     query = "{} {}".format(head, rel)
     queries.append(query)
     print(queries)
-    results = comet.generate(queries, decode_method="beam", num_generate=10)
+    results = comet.generate(queries, decode_method="greedy", num_generate=1)
     print(results)
 
 
