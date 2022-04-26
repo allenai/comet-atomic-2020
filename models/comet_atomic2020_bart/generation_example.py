@@ -109,18 +109,34 @@ all_relations = [
 
 if __name__ == "__main__":
 
-    # sample usage
+    # sample usage (reproducing AAAI)
+    print("model loading ...")
+    comet = Comet("./comet-atomic_2020_BART_aaai")
+    comet.model.zero_grad()
+    print("model loaded")
+    queries = []
+    head = "PersonX pleases ___ to make"
+    rel = "xWant"
+    query = "{} {}".format(head, rel)
+    queries.append(query)
+    print(queries)
+    results = comet.generate(queries, decode_method="greedy", num_generate=1)
+    print(results)
+
+
+    # sample usage (reproducing demo)
     print("model loading ...")
     comet = Comet("./comet-atomic_2020_BART")
     comet.model.zero_grad()
     print("model loaded")
-
     queries = []
-    head = "PersonX eats an apple"
-    rel = "xNeed"
+    head = "PersonX pleases ___ to make"
+    rel = "xWant"
     query = "{} {} [GEN]".format(head, rel)
     queries.append(query)
     print(queries)
     results = comet.generate(queries, decode_method="beam", num_generate=5)
     print(results)
+
+
 

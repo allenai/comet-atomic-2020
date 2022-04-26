@@ -1,4 +1,4 @@
 bert-score
 tabulate
-nltk
+nltk==3.5
 numpy
