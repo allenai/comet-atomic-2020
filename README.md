@@ -19,7 +19,7 @@ If you'd like to cite this paper, please use the reference below:
 
 ## Data: ATOMIC 2020
 
-The data for ATOMIC 2020 is available [here](https://allenai.org/data/atomic-2020). If you need the ATOMIC 2019 data ([Sap et al., 2019](https://www.semanticscholar.org/paper/ATOMIC%3A-An-Atlas-of-Machine-Commonsense-for-If-Then-Sap-Bras/8209a8703d8c48aaca1523cfa307dd1c069e58f3)), it is downloadable [here](https://allenai.org/data/atomic).
+The data for ATOMIC 2020 is available [here](https://drive.google.com/file/d/1uuY0Y_s8dhxdsoOe8OHRgsqf-9qJIai7/view?usp=drive_link). If you need the ATOMIC 2019 data ([Sap et al., 2019](https://www.semanticscholar.org/paper/ATOMIC%3A-An-Atlas-of-Machine-Commonsense-for-If-Then-Sap-Bras/8209a8703d8c48aaca1523cfa307dd1c069e58f3)), it is downloadable [here](https://allenai.org/data/atomic).
 
 ## Model: COMET-ATOMIC 2020
 
